@@ -4,7 +4,9 @@
  $stu_class = $_POST['class'];
  $stu_phone = $_POST['sphone'];
 
-$conn = mysqli_connect("127.0.0.1", "root", "crud");
+$conn = mysqli_connect("127.0.0.1", "root", "", "crud");
+
+
 if (!$conn) {
     die("Connection Failed: " . mysqli_connect_error());
 } else {
