@@ -1,11 +1,13 @@
 <?php
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
  $stu_name = $_POST['sname'];
  $stu_address = $_POST['saddress'];
  $stu_class = $_POST['class'];
  $stu_phone = $_POST['sphone'];
  $host = "localhost";
  $username = "root";
- $password = getenv(''); 
+ $password = ''; 
  $database = "crud";
  $conn = mysqli_connect($host, $username, $password, $database);
 if (!$conn) {
