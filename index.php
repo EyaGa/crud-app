@@ -1,12 +1,15 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include 'header.php';
 ?>
+<!DOCTYPE html>
 <div id="main-content">
     <h2>All Records</h2>
     <?php
       include 'config.php';
 
-      $sql = "SELECT * FROM student JOIN studentclass WHERE student.sclass = studentclass.cid";
+      $sql = "SELECT * FROM student JOIN studentclass ON student.sclass = studentclass.cid";
       $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
       if(mysqli_num_rows($result) > 0)  {
