@@ -1,0 +1,19 @@
+{
+  "extensions": {
+    "http": {
+      "routePrefix": "",
+      "maxConcurrentRequests": 100,
+      "maxOutstandingRequests": 10,
+      "dynamicCompression": {
+        "enabled": true,
+        "dll": "siteext.dll"
+      },
+      "version": "1.1.0",
+      "enabled": true,
+      "remoteDebuggingEnabled": false
+    },
+    "php": {
+      "version": "7.4"
+    }
+  }
+}
