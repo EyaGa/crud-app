@@ -77,8 +77,7 @@ jobs:
           name: extensions
 
       - name: 'Deploy extensions.json'
-        run: 
+        run: |
           curl -X PUT -u ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A2090663E4034C018D6C0166959FE5D2 }} \
             -H "Content-Type: application/json" \
-            --data-binary @"extensions.json" \
-            "https://crud-appli.scm.azurewebsites.net/site/wwwroot/extensions.json"
+            --data-binary @"extensions.json" 
