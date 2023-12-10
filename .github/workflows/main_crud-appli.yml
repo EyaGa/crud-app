@@ -64,3 +64,21 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A2090663E4034C018D6C0166959FE5D2 }}
           package: .
+
+      - name: 'Deploy extensions.json to Azure Web App'
+        uses: actions/upload-artifact@v2
+        with:
+          name: extensions
+          path: extensions.json
+
+      - name: 'Download extensions.json artifact'
+        uses: actions/download-artifact@v2
+        with:
+          name: extensions
+
+      - name: 'Deploy extensions.json'
+        run: |
+          curl -X PUT -u ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A2090663E4034C018D6C0166959FE5D2 }} \
+          -H "Content-Type: application/json" \
+          --data-binary @"extensions.json" \
+          "https://crud-appli.scm.azurewebsites.net/api/siteextensions/azurecli"
