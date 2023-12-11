@@ -7,7 +7,7 @@ include 'header.php';
 <div id="main-content">
     <h2>All Records</h2>
     <?php
-      $conn = mysqli_connect('localhost', 'root@localhost', '', 'crud');
+      $conn = mysqli_connect('localhost', 'root', '', 'crud');
       if (!$conn) {
         die("Connection Failed: " . mysqli_connect_error());
       } else {
