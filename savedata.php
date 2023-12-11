@@ -5,11 +5,7 @@
  $stu_address = $_POST['saddress'];
  $stu_class = $_POST['class'];
  $stu_phone = $_POST['sphone'];
- $host = "localhost";
- $username = "root";
- $password = ''; 
- $database = "crud";
- $conn = mysqli_connect($host, $username, $password, $database);
+ $conn = mysqli_connect('localhost', 'root', '', 'crud');
 if (!$conn) {
     die("Connection Failed: " . mysqli_connect_error());
 } else {
