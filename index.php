@@ -1,5 +1,4 @@
 <?php
-
 include 'header.php';
 ?>
 <!DOCTYPE html>
@@ -8,7 +7,7 @@ include 'header.php';
     <?php
       error_reporting(E_ALL);
       ini_set('display_errors', 1);
-      $conn = mysqli_connect('127.0.0.1', 'root@localhost', '1234', 'crud','3307','/tmp/mariadb.sock',);
+      $conn = mysqli_connect('127.0.0.1', 'root', '1234', 'crud', 3307, '/tmp/mariadb.sock');
       if (!$conn) {
         die("Connection Failed: " . mysqli_connect_error());
       } else {
@@ -42,12 +41,12 @@ include 'header.php';
              <a href='delete-inline.php?id={$row['sid']}'>Delete</a>
              </td>
             </tr>";
+          }
           ?>
-          <?php } ?>
         </tbody>
     </table>
     <?php 
-  }else{
+  } else {
     echo "<h2>No Record Found</h2>";
   }
   mysqli_close($conn);
