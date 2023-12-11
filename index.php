@@ -8,7 +8,7 @@ include 'header.php';
     <?php
       error_reporting(E_ALL);
       ini_set('display_errors', 1);
-      $conn = mysqli_connect('127.0.0.1', 'root@localhost', '1234', 'crud',null,'/tmp/mariadb.sock','3307');
+      $conn = mysqli_connect('127.0.0.1', 'root@localhost', '1234', 'crud','3307','/tmp/mariadb.sock',);
       if (!$conn) {
         die("Connection Failed: " . mysqli_connect_error());
       } else {
