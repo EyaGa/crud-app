@@ -5,9 +5,9 @@
  $username = "root";
  $password = ''; 
  $database = "crud";
- $conn = mysqli_connect($host, $username, $password, $database);
+ $conn = mysql_connect($host, $username, $password, $database);
 if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
+    die("Connection Failed: " . mysql_connect_error());
 } else {
     echo "Connected successfully";
 }
