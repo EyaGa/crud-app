@@ -7,8 +7,12 @@ include 'header.php';
 <div id="main-content">
     <h2>All Records</h2>
     <?php
-      include 'config.php';
-
+      $conn = mysqli_connect('localhost', 'root', '', 'crud');
+      if (!$conn) {
+        die("Connection Failed: " . mysqli_connect_error());
+      } else {
+       echo "Connected successfully";
+      }
       $sql = "SELECT * FROM student JOIN studentclass ON student.sclass = studentclass.cid";
       $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
