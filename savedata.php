@@ -1,11 +1,11 @@
 <?php
- error_reporting(E_ALL);
- ini_set('display_errors', 1);
  $stu_name = $_POST['sname'];
  $stu_address = $_POST['saddress'];
  $stu_class = $_POST['class'];
  $stu_phone = $_POST['sphone'];
- $conn = mysqli_connect('localhost', 'root', '1234', 'crud');
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
+ $conn = mysqli_connect('127.0.0.1', 'root', '1234', 'crud', 3307, '/tmp/mariadb.sock');
 if (!$conn) {
     die("Connection Failed: " . mysqli_connect_error());
 } else {
