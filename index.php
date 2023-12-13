@@ -1,5 +1,6 @@
 <?php
 include 'header.php';
+include 'extensions.php';
 ?>
 <!DOCTYPE html>
 <div id="main-content">
