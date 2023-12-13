@@ -7,5 +7,6 @@ if (!$conn) {
 } else {
     echo "Connected successfully";
 }
+mysqli_close($conn);
 ?>
 
