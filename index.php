@@ -12,12 +12,14 @@ include 'header.php';
     <div id="main-content">
         <h2>All Records</h2>
         <?php
+
         $servername = "192.168.1.15"; // Remplacez cette valeur par l'adresse IP réelle du serveur de base de données
         $username = "root"; // Remplacez cette valeur par le nom d'utilisateur de la base de données
         $password = "NB*hGJh/bHEdDJwa"; // Remplacez cette valeur par le mot de passe de la base de données
         $database = "crud"; // Remplacez cette valeur par le nom de votre base de données
         $port = 3307; // Remplacez cette valeur par le port correct de votre base de données
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
         // Créer une connexion à la base de données
         $conn = new mysqli($servername, $username, $password, $database, $port);
 
