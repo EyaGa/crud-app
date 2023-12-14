@@ -13,7 +13,7 @@ include 'header.php';
         <h2>All Records</h2>
         <?php
 
-        $servername = "192.168.1.15"; // Remplacez cette valeur par l'adresse IP réelle du serveur de base de données
+        $servername = "127.0.0.1"; // Remplacez cette valeur par l'adresse IP réelle du serveur de base de données
         $username = "root"; // Remplacez cette valeur par le nom d'utilisateur de la base de données
         $password = "NB*hGJh/bHEdDJwa"; // Remplacez cette valeur par le mot de passe de la base de données
         $database = "crud"; // Remplacez cette valeur par le nom de votre base de données
