@@ -11,24 +11,6 @@ include 'header.php';
     // Créer une connexion à la base de données
     $conn = new mysqli($servername, $username, $password);
 
-    // Vérifier la connexion
-    if ($conn->connect_error) {
-        die("Erreur de connexion: " . $conn->connect_error);
-    }
-
-    // Obtenir l'adresse IP du serveur de base de données
-    $sql = "SELECT @@global.hostname, @@global.port FROM dual;";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        echo "Adresse IP du serveur de base de données: " . $row["@@global.hostname"] . " (port: " . $row["@@global.port"] . ")";
-    } else {
-        echo "Erreur: aucune ligne trouvée";
-    }
-
-    // Fermer la connexion
-    $conn->close();
 ?>
     <table cellpadding="7px">
         <thead>
