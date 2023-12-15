@@ -7,7 +7,7 @@ include 'header.php';
     <?php
       error_reporting(E_ALL);
       ini_set('display_errors', 1);
-      $conn = new mysqli('0.0.0.0', 'root', 'NB*hGJh/bHEdDJwa', 'crud', 3307);
+      $conn = new mysqli('localhost', 'root', 'NB*hGJh/bHEdDJwa', 'crud', 3307);
       if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);
       } else {
