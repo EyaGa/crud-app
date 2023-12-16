@@ -9,7 +9,7 @@ include 'header.php';
       ini_set('display_errors', 1);
 
       try {
-          $conn = new mysqli('', 'root', 'NB*hGJh/bHEdDJwa', 'crud');
+          $conn = new mysqli('%', 'root', 'NB*hGJh/bHEdDJwa', 'crud');
           $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 5);
           if ($conn->connect_error) {
               throw new Exception("Connection Failed: " . $conn->connect_error);
