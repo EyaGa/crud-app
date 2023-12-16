@@ -7,16 +7,20 @@ include 'header.php';
     <?php
       error_reporting(E_ALL);
       ini_set('display_errors', 1);
-      $conn = new mysqli('20.119.16.24', 'root', 'NB*hGJh/bHEdDJwa', 'crud');
-      if ($conn->connect_error) {
-        die("Connection Failed: " . $conn->connect_error);
-      } else {
-       echo "Connected successfully";
-      }
-      $sql = "SELECT * FROM student JOIN studentclass ON student.sclass = studentclass.cid";
-      $result = mysqli_query($conn, $sql) or die("Query Unsuccessful.");
 
-      if(mysqli_num_rows($result) > 0)  {
+      try {
+          $conn = new mysqli('20.119.16.24', 'root', 'NB*hGJh/bHEdDJwa', 'crud');
+          
+          if ($conn->connect_error) {
+              throw new Exception("Connection Failed: " . $conn->connect_error);
+          }
+
+          echo "Connected successfully";
+
+          $sql = "SELECT * FROM student JOIN studentclass ON student.sclass = studentclass.cid";
+          $result = mysqli_query($conn, $sql);
+
+          if(mysqli_num_rows($result) > 0) {
     ?>
     <table cellpadding="7px">
         <thead>
@@ -46,11 +50,15 @@ include 'header.php';
         </tbody>
     </table>
     <?php 
-  } else {
-    echo "<h2>No Record Found</h2>";
-  }
-  mysqli_close($conn);
-  ?>
+      } else {
+        echo "<h2>No Record Found</h2>";
+      }
+      mysqli_close($conn);
+
+      } catch (Exception $e) {
+          echo "Error: " . $e->getMessage();
+      }
+    ?>
 </div>
 </div>
 </body>
