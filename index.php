@@ -10,7 +10,7 @@ include 'header.php';
 
       try {
           $conn = new mysqli('0.0.0.0', 'root', 'NB*hGJh/bHEdDJwa', 'crud');
-          $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 5);
+          $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 10);
           if ($conn->connect_error) {
               throw new Exception("Connection Failed: " . $conn->connect_error);
           }
